@@ -3,7 +3,7 @@
 // login.js
 // ==============================
 
-const SYSTEM_PASSWORD = "port1011";
+const SYSTEM_PASSWORD = "ubuntu-pwd";
 
 function showLogin() {
   app.innerHTML = `
