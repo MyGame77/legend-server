@@ -46,7 +46,7 @@ function showDashboard() {
 
             <p>Welcome back, Player.</p>
 
-            <p>Type <b>help</b> or say <b>Hey Jarvis</b>.</p>
+            <p>Type <b>help</b> or say <b>Hey Eternal</b>.</p>
 
         </div>
 

@@ -1,5 +1,5 @@
 // ==============================
-// JARVIS Crimson Core v5.0
+// ETERNAL Crimson Core v5.0
 // app.js
 // ==============================
 

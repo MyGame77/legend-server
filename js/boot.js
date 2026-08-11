@@ -1,5 +1,5 @@
 // ==============================
-// JARVIS Crimson Core v4.0
+// ETERNAL Crimson Core v4.0
 // boot.js
 // ==============================
 
@@ -8,7 +8,7 @@ const bootLines = [
     "Loading AI Core...",
     "Checking Systems...",
     "Connecting...",
-    "ETERNAL AI ONLINE"
+    "ETERNAL ONLINE"
 ];
 
 function showBoot() {
@@ -42,11 +42,11 @@ if (line >= bootLines.length) {
 
     setTimeout(() => {
         speak("Loading artificial intelligence core.");
-    }, 4000);
+    }, 3500);
 
     setTimeout(() => {
         showLogin();
-    }, 5200);
+    }, 5000);
 
     return;
 }
@@ -67,7 +67,7 @@ if (line >= bootLines.length) {
 }
 
 // ==============================
-// JARVIS Crimson Core
+// ETERNAL Crimson Core
 // boot.js
 // ==============================
 
@@ -112,7 +112,7 @@ function showStartScreen() {
         <div class="logo">ETERNAL</div>
 
         <div class="subtitle">
-            Crimson Core AI
+            Crimson Core OS
         </div>
 
         <div class="crimsonCore">
@@ -135,14 +135,14 @@ function showStartScreen() {
         </div>
 
         <p class="coreMessage">
-            TAP THE CORE TO INITIALIZE THE AI
+            TAP THE CORE TO INITIALIZE
         </p>
 
     </div>
 
     `;
 
-    document.getElementById("jarvisCore").onclick = function () {
+    document.getElementById("eternalCore").onclick = function () {
 
         speak("Welcome Player.");
 

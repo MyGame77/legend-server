@@ -1,5 +1,5 @@
 // ==============================
-// ETERNAl Crimson Core v7.0
+// ETERNAL Crimson Core v7.0
 // commands.js
 // Part 1
 // ==============================
@@ -56,13 +56,8 @@ case "help":
     /security<br>
     /memory<br>
     /cpu<br>
-
-    <br>
-
     SYSTEM
-
-    <br><br>
-
+    <br>
     /lock<br>
     /reboot<br>
     /shutdown<br>
@@ -228,7 +223,7 @@ case "/diagnostics":
 
 case "/core":
 
-    speak(" Eternal Crimson Core online.");
+    speak("Crimson Core online.");
 
     terminal.innerHTML += `
     <p>
@@ -409,7 +404,7 @@ case "/system":
 
     <br>
 
-    Version 7.0
+    Version 4.0
 
     <br>
 
@@ -470,11 +465,11 @@ case "/version":
     terminal.innerHTML += `
     <p>
 
-    Eternal Crimson Core
+    ETERNAL Crimson Core
 
     <br>
 
-    Version : 1.5
+    Version : 4.0
 
     <br>
 
@@ -490,13 +485,13 @@ case "/about":
     terminal.innerHTML += `
     <p>
 
-    Eternal Crimson Core
+    ETERNAL Crimson Core
 
     <br><br>
 
     Created By
 
-    MyGame77
+    Player
 
     <br><br>
 
@@ -630,11 +625,11 @@ case "/kernel":
     terminal.innerHTML += `
     <p>
 
-    Eternal Crimson Kernel
+    Crimson Kernel
 
     <br>
 
-    Version 5.3.1
+    Version 7.0.1
 
     </p>
     `;

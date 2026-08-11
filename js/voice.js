@@ -8,7 +8,7 @@ const BrowserSpeechRecognition =
     window.SpeechRecognition ||
     window.webkitSpeechRecognition;
 
-let jarvisAwake = false;
+let eternalAwake = false;
 let waitingPassword = false;
 
 if (BrowserSpeechRecognition) {
@@ -94,13 +94,13 @@ function processVoice(text) {
     text = text.toLowerCase().trim();
 
     // Wake Word
-    if (!jarvisAwake) {
+    if (!eternalAwake) {
 
-        if (text.includes("hey jarvis")) {
+        if (text.includes("hey eternal")) {
 
-            jarvisAwake = true;
+            eternalAwake = true;
 
-            speak("Yes Commander.");
+            speak("Yes Player.");
 
         }
 
@@ -112,7 +112,7 @@ function processVoice(text) {
     if (waitingPassword) {
 
         waitingPassword = false;
-        jarvisAwake = false;
+        eternalAwake = false;
 
         if (
             text.includes("crimson two zero two six") ||
@@ -214,7 +214,7 @@ function processVoice(text) {
     }
 
     // Go back to sleep after one command
-    jarvisAwake = false;
+    eternalAwake = false;
 
 }
 
