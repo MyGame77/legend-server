@@ -1,5 +1,5 @@
 // ==============================
-// JARVIS Crimson Core v5.0
+// ETERNAL Crimson Core v5.0
 // engineer.js
 // ==============================
 
@@ -8,7 +8,7 @@ function showEngineerMode() {
     app.innerHTML = `
         <div class="screen">
 
-            <div class="logo">JARVIS</div>
+            <div class="logo">ETERNAL</div>
 
             <div class="subtitle">ENGINEER MODE</div>
 

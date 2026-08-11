@@ -1,5 +1,5 @@
 // ==============================
-// JARVIS Crimson Core v7.0
+// ETERNAL Crimson Core v7.0
 // dashboard.js
 // ==============================
 
@@ -9,7 +9,7 @@ function showDashboard() {
     <div class="screen">
 
         <div class="logo">
-            JARVIS
+            ETERNAL
         </div>
 
         <div class="subtitle">
@@ -35,7 +35,7 @@ function showDashboard() {
             <div class="middleRing"></div>
 
             <div class="innerCore">
-                JARVIS
+                ETERNAL
             </div>
 
         </div>
@@ -44,7 +44,7 @@ function showDashboard() {
 
         <div id="terminal">
 
-            <p>Welcome back, Commander.</p>
+            <p>Welcome back, Player.</p>
 
             <p>Type <b>help</b> or say <b>Hey Jarvis</b>.</p>
 

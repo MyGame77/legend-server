@@ -8,7 +8,7 @@ const bootLines = [
     "Loading AI Core...",
     "Checking Systems...",
     "Connecting...",
-    "JARVIS ONLINE"
+    "ETERNAL AI ONLINE"
 ];
 
 function showBoot() {
@@ -16,7 +16,7 @@ function showBoot() {
     app.innerHTML = `
         <div class="screen">
 
-            <div class="logo">JARVIS</div>
+            <div class="logo">ETERNAL</div>
 
             <div class="subtitle">Crimson Core v4.0</div>
 
@@ -42,11 +42,11 @@ if (line >= bootLines.length) {
 
     setTimeout(() => {
         speak("Loading artificial intelligence core.");
-    }, 3500);
+    }, 4000);
 
     setTimeout(() => {
         showLogin();
-    }, 5000);
+    }, 5200);
 
     return;
 }
@@ -109,10 +109,10 @@ function showStartScreen() {
 
     <div class="screen">
 
-        <div class="logo">JARVIS</div>
+        <div class="logo">ETERNAL</div>
 
         <div class="subtitle">
-            Crimson Core OS
+            Crimson Core AI
         </div>
 
         <div class="crimsonCore">
@@ -122,12 +122,12 @@ function showStartScreen() {
             <div class="ring ring3"></div>
             <div class="ring ring4"></div>
 
-            <div class="energyCore" id="jarvisCore">
+            <div class="energyCore" id="eternalCore">
 
                 <div class="coreGlow"></div>
 
                 <div class="coreText">
-                    J
+                    E
                 </div>
 
             </div>
@@ -135,7 +135,7 @@ function showStartScreen() {
         </div>
 
         <p class="coreMessage">
-            TAP THE CORE TO INITIALIZE
+            TAP THE CORE TO INITIALIZE THE AI
         </p>
 
     </div>
@@ -144,7 +144,7 @@ function showStartScreen() {
 
     document.getElementById("jarvisCore").onclick = function () {
 
-        speak("Welcome Commander.");
+        speak("Welcome Player.");
 
         this.style.transform = "scale(.9)";
 

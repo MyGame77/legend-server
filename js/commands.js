@@ -1,5 +1,5 @@
 // ==============================
-// JARVIS Crimson Core v7.0
+// ETERNAl Crimson Core v7.0
 // commands.js
 // Part 1
 // ==============================
@@ -27,10 +27,10 @@ case "hello":
 
 case "hi":
 
-    speak("Hello Commander.");
+    speak("Hello Player.");
 
     terminal.innerHTML += `
-        <p>Hello Commander.</p>
+        <p>Hello Player.</p>
     `;
     break;
 
@@ -132,7 +132,7 @@ case "clear":
     terminal.innerHTML = `
     <p>
 
-    Welcome back Commander.
+    Welcome back Player.
 
     </p>
 
@@ -228,7 +228,7 @@ case "/diagnostics":
 
 case "/core":
 
-    speak("Crimson Core online.");
+    speak(" Eternal Crimson Core online.");
 
     terminal.innerHTML += `
     <p>
@@ -401,7 +401,7 @@ case "/system":
     terminal.innerHTML += `
     <p>
 
-    JARVIS
+    ETERNAL
 
     <br>
 
@@ -444,7 +444,7 @@ case "/reboot":
 
 case "/shutdown":
 
-    speak("Goodbye Commander.");
+    speak("Goodbye Player.");
 
     app.innerHTML = `
 
@@ -470,11 +470,11 @@ case "/version":
     terminal.innerHTML += `
     <p>
 
-    JARVIS Crimson Core
+    Eternal Crimson Core
 
     <br>
 
-    Version : 7.0
+    Version : 1.5
 
     <br>
 
@@ -490,13 +490,13 @@ case "/about":
     terminal.innerHTML += `
     <p>
 
-    JARVIS Crimson Core
+    Eternal Crimson Core
 
     <br><br>
 
     Created By
 
-    Commander
+    MyGame77
 
     <br><br>
 
@@ -630,11 +630,11 @@ case "/kernel":
     terminal.innerHTML += `
     <p>
 
-    Crimson Kernel
+    Eternal Crimson Kernel
 
     <br>
 
-    Version 7.0.1
+    Version 5.3.1
 
     </p>
     `;

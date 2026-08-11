@@ -1,5 +1,5 @@
 // ==============================
-// JARVIS Crimson Core v3.0
+// ETERNAL Crimson Core v3.0
 // login.js
 // ==============================
 
@@ -9,7 +9,7 @@ function showLogin() {
   app.innerHTML = `
         <div class="screen">
 
-            <div class="logo">JARVIS</div>
+            <div class="logo">ETERNAL</div>
 
             <div class="subtitle">Authentication Required</div>
 
@@ -65,7 +65,7 @@ function showAccessGranted() {
     "Identity Confirmed",
     "Decrypting Security Keys...",
     "Loading Dashboard...",
-    "Welcome back, Commander.",
+    "Welcome back, Player.",
   ];
 
   speak("Authentication successful.");

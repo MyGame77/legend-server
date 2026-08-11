@@ -1,5 +1,5 @@
 // ==============================
-// JARVIS Crimson Core v6.0
+// ETERNAL Crimson Core v6.0
 // ui.js
 // ==============================
 
@@ -67,9 +67,9 @@ if(SpeechRecognition){
 
         console.log("Voice:",text);
 
-        if(text.includes("hey jarvis")){
+        if(text.includes("hey eternal")){
 
-            speak("Yes Commander.");
+            speak("Yes Player.");
 
         }
 

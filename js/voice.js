@@ -1,5 +1,5 @@
 // ==============================
-// JARVIS Voice System v2.0
+// ETERNAL Voice System v2.0
 // ==============================
 
 let recognition = null;
