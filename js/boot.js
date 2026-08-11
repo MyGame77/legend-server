@@ -127,7 +127,7 @@ function showStartScreen() {
                 <div class="coreGlow"></div>
 
                 <div class="coreText">
-                    E
+                    J
                 </div>
 
             </div>
