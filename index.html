@@ -1,27 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETERNAL Crimson Core</title>
-
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Human Verification Game</title>
+<style>
+:root{
+  --bg:#050816;
+  --panel:#0f172a;
+  --panel2:#111c33;
+  --text:#f8fafc;
+  --muted:#94a3b8;
+  --accent:#22d3ee;
+  --good:#22c55e;
+  --bad:#ef4444;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; display:grid; place-items:center;
+  padding:24px; color:var(--text); font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  background:
+    radial-gradient(circle at 20% 10%,#164e6333,transparent 35%),
+    radial-gradient(circle at 80% 90%,#0e749033,transparent 35%),
+    var(--bg);
+}
+.card{
+  width:min(760px,100%); background:#0f172aee; border:1px solid #334155;
+  border-radius:24px; padding:28px; box-shadow:0 20px 70px #0008;
+}
+.badge{display:inline-block;padding:7px 12px;border-radius:999px;background:#083344;color:#67e8f9;font-size:13px;font-weight:700}
+h1{margin:15px 0 8px;font-size:clamp(28px,6vw,46px)}
+.subtitle{color:var(--muted);margin:0 0 24px}
+.target{
+  text-align:center;padding:16px;border-radius:16px;background:var(--panel2);
+  border:1px solid #334155;margin-bottom:18px;font-size:19px
+}
+.target strong{color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.tile{
+  position:relative;border:3px solid transparent;border-radius:14px;overflow:hidden;
+  padding:0;background:#020617;cursor:pointer;aspect-ratio:1.5;
+}
+.tile img{display:block;width:100%;height:100%;object-fit:cover}
+.tile.selected{border-color:var(--accent);box-shadow:0 0 0 3px #22d3ee33}
+.tile.selected::after{
+  content:"✓";position:absolute;right:8px;top:8px;width:30px;height:30px;
+  display:grid;place-items:center;border-radius:50%;background:var(--accent);color:#042f2e;font-weight:900;
+}
+.controls{display:flex;gap:10px;margin-top:20px}
+button{
+  flex:1;border:0;border-radius:12px;padding:14px 18px;font-size:16px;font-weight:800;
+  cursor:pointer;background:var(--accent);color:#042f2e;
+}
+button.secondary{background:#1e293b;color:var(--text);border:1px solid #475569}
+button:hover{filter:brightness(1.08)}
+#result{min-height:28px;text-align:center;margin-top:16px;font-weight:800}
+.success{color:var(--good)} .error{color:var(--bad)}
+@media(max-width:520px){.card{padding:18px}.grid{gap:7px}.controls{flex-direction:column}}
+</style>
 </head>
-
 <body>
+<main class="card">
+  <span class="badge">HUMAN VERIFICATION</span>
+  <h1>Are you human?</h1>
+  <p class="subtitle">Select every picture that matches the target.</p>
 
-    <div id="app"></div>
+  <div class="target">Select all pictures containing <strong id="target">ocean</strong>.</div>
 
-    <script src="js/app.js"></script>
-    <script src="js/boot.js"></script>
-    <script src="js/login.js"></script>
-    <script src="js/dashboard.js"></script>
-    <script src="js/commands.js"></script>
-    <script src="js/engineer.js"></script>
-    <script src="js/ui.js"></script>
-<script src="js/voice.js"></script>
+  <section id="grid" class="grid" aria-label="Picture selection game"></section>
 
+  <div class="controls">
+    <button id="verify">Verify I'm Human</button>
+    <button id="new" class="secondary">New Challenge</button>
+  </div>
+
+  <div id="result" aria-live="polite"></div>
+</main>
+
+<script>
+const imagePool = [
+  {src:"assets/ocean1.png", type:"ocean"},
+  {src:"assets/cat1.png", type:"cat"},
+  {src:"assets/ocean2.png", type:"ocean"},
+  {src:"assets/dog1.png", type:"dog"},
+  {src:"assets/island1.png", type:"ocean"},
+  {src:"assets/tree1.png", type:"tree"},
+  {src:"assets/ocean3.png", type:"ocean"},
+  {src:"assets/car1.png", type:"car"},
+  {src:"assets/island2.png", type:"ocean"}
+];
+
+const targets = ["ocean", "cat", "dog", "tree", "car"];
+let challenge = [];
+let target = "";
+
+const grid = document.getElementById("grid");
+const targetText = document.getElementById("target");
+const result = document.getElementById("result");
+
+function shuffle(array){
+  return [...array].sort(() => Math.random() - 0.5);
+}
+
+function newChallenge(){
+  // Make sure the target has at least one matching image.
+  target = targets[Math.floor(Math.random() * targets.length)];
+  targetText.textContent = target;
+
+  const matches = shuffle(imagePool.filter(x => x.type === target));
+  const nonMatches = shuffle(imagePool.filter(x => x.type !== target));
+
+  // Prefer a balanced challenge: 3 matching + 6 non-matching where possible.
+  challenge = shuffle([...matches.slice(0, 3), ...nonMatches.slice(0, 6)]);
+
+  grid.innerHTML = "";
+  result.textContent = "";
+  result.className = "";
+
+  challenge.forEach((item, index) => {
+    const button = document.createElement("button");
+    button.className = "tile";
+    button.type = "button";
+    button.setAttribute("aria-label", `Picture ${index + 1}`);
+    button.innerHTML = `<img src="${item.src}" alt="Verification picture ${index + 1}">`;
+    button.addEventListener("click", () => button.classList.toggle("selected"));
+    grid.appendChild(button);
+  });
+}
+
+document.getElementById("verify").addEventListener("click", () => {
+  const selected = [...document.querySelectorAll(".tile")].map((tile, i) => ({
+    selected: tile.classList.contains("selected"),
+    correct: challenge[i].type === target
+  }));
+
+  const correct = selected.every(x => x.selected === x.correct);
+
+  if(correct){
+    result.textContent = "✓ Verification successful! You are human.";
+    result.className = "success";
+  }else{
+    result.textContent = "✗ Not quite. Try again!";
+    result.className = "error";
+  }
+});
+
+document.getElementById("new").addEventListener("click", newChallenge);
+
+newChallenge();
+</script>
 </body>
-
 </html>
