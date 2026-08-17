@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "eternal-crimson-ai",
+  "main": "worker/src/index.js",
+  "compatibility_date": "2026-08-17",
+  "ai": {
+    "binding": "AI"
+  }
+}

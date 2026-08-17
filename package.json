@@ -1,0 +1,12 @@
+{
+  "name": "eternal-crimson-ai",
+  "private": true,
+  "version": "2.0.0",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "latest"
+  }
+}

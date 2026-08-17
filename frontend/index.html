@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Eternal Crimson AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="side-head">
+      <div class="brand">🔴 ETERNAL CRIMSON</div>
+      <button id="newChat" class="new-chat">＋ New chat</button>
+    </div>
+    <div id="conversations" class="conversations"></div>
+    <div class="side-foot">Cloudflare Workers AI</div>
+  </aside>
+
+  <section class="app">
+    <header class="topbar">
+      <button id="mobileNew" class="mobile-new">＋</button>
+      <div>
+        <div class="title">Eternal Crimson AI</div>
+        <div id="status" class="subtitle">Checking connection…</div>
+      </div>
+      <button id="clearChat" class="icon-btn" title="Clear current chat">⌫</button>
+    </header>
+
+    <main id="chat" class="chat">
+      <div id="welcome" class="welcome">
+        <div class="logo">✦</div>
+        <h1>What can I help you with?</h1>
+        <p>Chat naturally, ask questions, or work through an idea.</p>
+      </div>
+    </main>
+
+    <form id="form" class="composer">
+      <textarea id="input" rows="1" placeholder="Message Eternal Crimson AI…" autocomplete="off"></textarea>
+      <button id="send" type="submit" aria-label="Send">➤</button>
+    </form>
+    <div class="hint">Enter to send · Shift + Enter for a new line</div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
