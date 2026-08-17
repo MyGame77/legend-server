@@ -1,8 +1,12 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "eternal-crimson-ai",
+  "name": "legend-serverai",
   "main": "worker/src/index.js",
   "compatibility_date": "2026-08-17",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  },
   "ai": {
     "binding": "AI"
   }
