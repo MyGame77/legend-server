@@ -1,12 +1,22 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
+
   "name": "legend-serverai",
+
   "main": "worker/src/index.js",
+
   "compatibility_date": "2026-08-17",
+
   "assets": {
     "directory": ".",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "exclude": [
+      "node_modules/**",
+      ".git/**",
+      ".wrangler/**"
+    ]
   },
+
   "ai": {
     "binding": "AI"
   }
