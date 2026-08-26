@@ -119,7 +119,7 @@ async function checkStatus(){
   try{
     const r=await fetch(API+"/status"); const d=await r.json();
     statusEl.textContent=d.online?"● Online · MyGame AI":"○ Offline";
-  }catch{statusEl.textContent="○ Worker offline"}
+  }catch{statusEl.textContent="○ AI offline"}
 }
 
 function extractText(obj){
