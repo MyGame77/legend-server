@@ -118,7 +118,7 @@ async function checkStatus(){
   if(API==="YOUR_WORKER_URL"){statusEl.textContent="Set your Worker URL in app.js";return}
   try{
     const r=await fetch(API+"/status"); const d=await r.json();
-    statusEl.textContent=d.online?"● Online · Cloudflare AI":"○ Offline";
+    statusEl.textContent=d.online?"● Online · MyGame AI":"○ Offline";
   }catch{statusEl.textContent="○ Worker offline"}
 }
 
